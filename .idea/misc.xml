@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/microservice.parent/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice.common/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice.provider/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice.consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice.eurake1/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice.eurake2/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice.eurake3/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice.consumer-feign/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice.provider-hystrix/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/microservice.common/microservice-provider/pom.xml" />
+      </set>
+    </option>
+  </component>
+</project>

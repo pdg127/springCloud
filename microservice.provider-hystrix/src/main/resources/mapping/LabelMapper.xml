@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pdg.provider.mapper.LabelMapper">
+  <resultMap id="BaseResultMap" type="com.pdg.common.entity.Label">
+    <id column="LID" jdbcType="DECIMAL" property="lid" />
+    <result column="LABEL" jdbcType="VARCHAR" property="label" />
+    <result column="STATE" jdbcType="VARCHAR" property="state" />
+    <result column="LDATE" jdbcType="TIMESTAMP" property="ldate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    LID, LABEL, STATE, LDATE
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from LABEL
+    where LID = #{lid,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from LABEL
+    where LID = #{lid,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.pdg.common.entity.Label">
+    insert into LABEL (LID, LABEL, STATE, 
+      LDATE)
+    values (#{lid,jdbcType=DECIMAL}, #{label,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, 
+      #{ldate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pdg.common.entity.Label">
+    insert into LABEL
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="lid != null">
+        LID,
+      </if>
+      <if test="label != null">
+        LABEL,
+      </if>
+      <if test="state != null">
+        STATE,
+      </if>
+      <if test="ldate != null">
+        LDATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="lid != null">
+        #{lid,jdbcType=DECIMAL},
+      </if>
+      <if test="label != null">
+        #{label,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="ldate != null">
+        #{ldate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pdg.common.entity.Label">
+    update LABEL
+    <set>
+      <if test="label != null">
+        LABEL = #{label,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        STATE = #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="ldate != null">
+        LDATE = #{ldate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where LID = #{lid,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pdg.common.entity.Label">
+    update LABEL
+    set LABEL = #{label,jdbcType=VARCHAR},
+      STATE = #{state,jdbcType=VARCHAR},
+      LDATE = #{ldate,jdbcType=TIMESTAMP}
+    where LID = #{lid,jdbcType=DECIMAL}
+  </update>
+
+  <select id="queryAll" resultMap="BaseResultMap">
+    select * from LABEL
+  </select>
+</mapper>

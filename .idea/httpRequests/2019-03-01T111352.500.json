@@ -1,0 +1,7 @@
+{
+  "timestamp": "2019-03-01T03:13:52.003+0000",
+  "status": 500,
+  "error": "Internal Server Error",
+  "message": "Optional int parameter 'lid' is present but cannot be translated into a null value due to being declared as a primitive type. Consider declaring it as object wrapper for the corresponding primitive type.",
+  "path": "/label/getOne"
+}

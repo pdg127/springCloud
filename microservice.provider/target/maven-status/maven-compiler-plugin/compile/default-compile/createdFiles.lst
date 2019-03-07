@@ -1,0 +1,5 @@
+com\pdg\provider\service\LabelService.class
+com\pdg\provider\controller\LabelController.class
+com\pdg\provider\mapper\LabelMapper.class
+com\pdg\provider\springcloud\ProviderApplication.class
+com\pdg\provider\service\impl\LabelServiceImpl.class
